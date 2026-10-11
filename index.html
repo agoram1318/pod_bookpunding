@@ -518,7 +518,7 @@ dialog .btn{position:absolute;top:10px;right:10px;z-index:2}
     <p class="eyebrow">봉샘스쿨 수학 교재 · POD 주문 인쇄</p>
     <h1 id="hero-title">처음 선행부터 수능까지,<br><em>단계마다 맞는 <span class="nw">수학 교재 12종.</span></em></h1>
     <div class="hero-sub">
-      <p class="lead">진도용 유형서, 내신 유형서, 수능형 심화, 올림포스 부교재 변형, 실전 모의고사, 수능 N제까지. 학생 단계에 맞는 교재를 과목별로 고르고, 출시된 교재는 수학비서 POD 상점에서 필요한 부수만큼 주문하세요.</p>
+      <p class="lead">진도용 유형서, 내신 유형서, 수능형 심화, 올림포스 부교재 변형, 실전 모의고사, 수능 N제까지. 학생 단계에 맞는 교재를 과목별로 고르고, 출시된 교재는 필요한 부수만큼 주문하세요.</p>
       <div class="hero-cta">
         <a class="btn primary" href="#shop">주문 가능한 교재 보기</a>
         <a class="btn down" href="#finder">우리 학생에게 맞는 교재 찾기</a>
@@ -601,7 +601,7 @@ dialog .btn{position:absolute;top:10px;right:10px;z-index:2}
       </div>
     </div>
     <div class="legend">
-      <span><span class="st pod">주문</span>수학비서 상점에서 바로 주문</span>
+      <span><span class="st pod">주문</span>바로 주문 가능</span>
       <span><span class="st ready">문의</span>주문 가능 여부 문의</span>
       <span><span class="st soon">예정</span>출시예정</span>
       <span><span class="st make">제작</span>제작예정</span>
@@ -620,8 +620,8 @@ dialog .btn{position:absolute;top:10px;right:10px;z-index:2}
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">05 — 주문하기</p>
-      <h2 id="shop-title">수학비서 POD 상점에서<br><em>필요한 부수만큼 주문하세요.</em></h2>
-      <p class="sub">POD(주문형 인쇄) 교재라 주문한 부수만큼 인쇄해 보내 드립니다. 결제와 배송은 수학비서 상점에서 진행됩니다.</p>
+      <h2 id="shop-title">과목에 맞는 교재를<br><em>필요한 부수만큼 주문하세요.</em></h2>
+      <p class="sub">POD(주문형 인쇄) 교재라 주문한 부수만큼 인쇄해 보내 드립니다.</p>
     </div>
     <ol class="how reveal">
       <li><i>1</i><div><b>교재 고르기</b><span>아래 목록에서 과목에 맞는 교재를 고릅니다.</span></div></li>
@@ -630,14 +630,14 @@ dialog .btn{position:absolute;top:10px;right:10px;z-index:2}
     <div class="shop" id="shopList"></div>
     <div class="shop-foot">
       <p>출시예정 교재는 출시되면 이 목록에 추가됩니다. 온다 모의고사 중1·중2 회차는 봉샘스쿨에 주문 가능 여부를 문의해 주세요.</p>
-      <p>학원 로고를 넣은 커스텀 표지는 10부부터 주문할 수 있습니다. 가격, 배송비, 배송 일정은 수학비서 상점의 상품 페이지 기준입니다.</p>
+      <p>학원 로고를 넣은 커스텀 표지는 10부부터 주문할 수 있습니다.</p>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap"><span><b>봉샘스쿨</b> 수학 POD 교재 · 2026년 9월 28일 기준 라인업</span><span>주문·결제·배송: 수학비서 POD 상점</span></div>
+  <div class="wrap"><span><b>봉샘스쿨</b> 수학 POD 교재 · 2026년 9월 28일 기준 라인업</span></div>
 </footer>
 
 <dialog id="zoom" aria-label="샘플 페이지 크게 보기"><button class="btn sm" type="button" id="zoomClose">닫기</button><img id="zoomImg" alt=""></dialog>
@@ -645,7 +645,7 @@ dialog .btn{position:absolute;top:10px;right:10px;z-index:2}
 <script>
 "use strict";
 document.documentElement.classList.add("js");
-/* 상점에 올라간 상품명 그대로. 새 교재가 나오면 data의 prev와 IMG, 여기 STORE_NAME에 추가합니다. */
+/* 교재 상품명. 새 교재가 나오면 data의 prev와 IMG, 여기 STORE_NAME에 추가합니다. */
 const STORE_NAME={
   "gongyangl-c2p2":"공양미 라이트 공통수학2 Part2","gongyangl-m1p2":"공양미 라이트 미적분1 Part2",
   "baekmil-c2p2":"백미 라이트 공통수학2 Part2","baekmil-m1p2":"백미 라이트 미적분1 Part2",
@@ -908,7 +908,7 @@ function renderDetail(){
   }else{
     const [k]=avail(s);
     gal.append(el("div",{class:"noprev"},el("b",{text:fullName(s)}),el("span",{text:s.ratio+" · "+s.range}),el("span",{text:"출시되면 이곳에 샘플 페이지를 올립니다."})));
-    side.append(el("div",{class:"buy wait"},el("h5",{text:k==="ready"?"주문 문의":"출시예정"}),el("p",{text:k==="ready"?"일부 회차는 봉샘스쿨에 주문 가능 여부를 문의해 주세요.":"출시되면 주문하기 목록에 추가되고 수학비서 상점에서 주문할 수 있습니다."})));
+    side.append(el("div",{class:"buy wait"},el("h5",{text:k==="ready"?"주문 문의":"출시예정"}),el("p",{text:k==="ready"?"일부 회차는 봉샘스쿨에 주문 가능 여부를 문의해 주세요.":"출시되면 주문하기 목록에 추가됩니다."})));
   }
   d.append(el("div",{class:"dcol1"},head,dl),el("div",{class:"dcol2"},gal,side));
 }
